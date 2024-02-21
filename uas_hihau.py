@@ -201,15 +201,21 @@ def Pertanyaan_Bisnis(df_products, df_products_name):
     # Visualisasi distribusi
     st.write("### Distribusi Panjang Karakter Nama Produk")
     fig, ax = plt.subplots(figsize=(12, 8))
-    sns.histplot(data=name_length_table, x='Panjang Karakter Nama', hue='Nama Produk', kde=True, ax=ax)
+    sns.histplot(data=name_length_table, x='Panjang Karakter Nama', kde=True, ax=ax)
     plt.title('Distribusi Panjang Karakter Nama Produk berdasarkan Kategori', fontsize=16)
     plt.xlabel('Panjang Karakter Nama', fontsize=14)
     plt.ylabel('Frekuensi', fontsize=14)
-    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', fontsize=12)
     st.pyplot(fig)
-    
+
+    # Informasi Rata-rata, nilai max, dan nilai min Panjang Produk
+    average_name_length = df_products['product_name_lenght'].mean()
+    max_name_length = df_products['product_name_lenght'].max()
+    min_name_length = df_products['product_name_lenght'].min()
     # Expander
     with st.expander("Evaluasi Efektifitas Nama Produk :") :
+        st.write(f"Rata-rata Panjang Produk: **{average_name_length:.2f}** char")
+        st.write(f"Panjang Produk Tertinggi: **{max_name_length}** char")
+        st.write(f"Panjang Produk Terendah: **{min_name_length}** char")
         st.write("Berdasarkan data di atas, kita bisa mengetahui penggunaan jumlah karakter dari yang paling pendek hingga pailing panjang dalam penamaan prodak. Menurut data di atas,50 samapi 60 karakter adalah kisaran paling banyak dalam penamaan prodak,dari sini kita bisa pempertimbangkan jumlah karakter dalam penamaan prodak kita jika ingin memulai bisnis.")
 
 # Load Dataset
