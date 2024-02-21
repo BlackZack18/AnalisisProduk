@@ -244,7 +244,6 @@ if menu == "Dashboard":
 elif menu == "About Us":
     st.title("Kelompok hihau")
     # Tampilkan anggota kelompok
-    st.markdown(" **Kelompok**: hihau")
     st.markdown(" **Anggota**:")
     st.markdown("  - 10122373 - Rakin Zakiy Saputra")
     st.markdown("  - 10122366 - Suswan Guevara Aryadhi")
