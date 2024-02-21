@@ -3,3 +3,4 @@ pandas
 seaborn
 requests
 matplotlib
+folium
